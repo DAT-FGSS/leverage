@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>即時評估 — 槓桿｜粉嶺官立中學 DAT</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/quiz.css">
+
+<style id="dat-brand-align">
+  .brand.dat-brand, a.brand.dat-brand {
+    display: flex !important;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand.dat-brand .crest {
+    width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; display: block;
+  }
+  .brand.dat-brand .dot { display: none !important; }
+  .brand.dat-brand .brand-text {
+    display: flex; flex-direction: column; line-height: 1.25; gap: 0.1rem;
+  }
+  .brand.dat-brand .school {
+    font-size: 0.95rem; font-weight: 800; color: #111; letter-spacing: 0.01em;
+  }
+  .brand.dat-brand .dat {
+    font-size: 0.92rem; font-weight: 800; color: #0A7A4F; letter-spacing: 0.01em;
+  }
+  .brand.dat-brand:hover .school,
+  .brand.dat-brand:hover .dat { opacity: 0.85; }
+  .footer .back-dat {
+    display: inline-block; margin-top: 0.75rem; font-weight: 800; color: #0A7A4F;
+    text-decoration: none; border-bottom: 2px solid #0A7A4F; padding-bottom: 0.1rem;
+  }
+  .footer .back-dat:hover { opacity: 0.8; }
+</style>
+
+</head>
+<body>
+
+<!-- 導覽列 -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand dat-brand" href="https://dat-fgss.github.io/Home/">
+      <img class="crest" src="assets/logo-crest.png" alt="粉嶺官立中學校徽" width="48" height="48" />
+      <span class="brand-text">
+        <span class="school">粉嶺官立中學</span>
+        <span class="dat">設計與應用科技科 (DAT)</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">三類槓桿</a>
+      <a href="quiz.html" class="active">即時評估</a>
+    </div>
+  </div>
+</nav>
+
+<header class="quiz-hero">
+  <h1>即時評估</h1>
+  <p>由淺到深，共 7 題。完成後成績會即時上傳給老師。</p>
+</header>
+
+<!-- 進度列 -->
+<div class="progress-wrap hidden" id="progressWrap">
+  <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-meta">
+    <span id="progressLabel">第 1 題 / 共 7 題</span>
+    <span id="timerLabel">用時 00:00</span>
+  </div>
+</div>
+
+<!-- 步驟一：學生資料 -->
+<section class="panel" id="infoPanel">
+  <h2>開始前，請填寫個人資料</h2>
+  <p class="note">資料會連同你的成績一併記錄，請務必填寫正確。</p>
+
+  <div class="grid2">
+    <div class="field" id="f-class">
+      <label for="in-class">班別 <span style="color:#d1495b">*</span></label>
+      <input type="text" id="in-class" placeholder="例如：3A" maxlength="6" autocomplete="off">
+      <div class="err">請輸入班別。</div>
+    </div>
+    <div class="field" id="f-id">
+      <label for="in-id">學號 <span style="color:#d1495b">*</span></label>
+      <input type="text" id="in-id" placeholder="例如：05" maxlength="4" inputmode="numeric" autocomplete="off">
+      <div class="err">請輸入學號。</div>
+    </div>
+  </div>
+  <div class="field" id="f-name">
+    <label for="in-name">姓名 <span style="color:#d1495b">*</span></label>
+    <input type="text" id="in-name" placeholder="例如：陳大文" maxlength="20" autocomplete="off">
+    <div class="err">請輸入姓名。</div>
+  </div>
+
+  <div class="q-nav" style="justify-content:flex-end;">
+    <button class="btn btn-primary" id="startBtn">開始評估 →</button>
+  </div>
+</section>
+
+<!-- 步驟二：題目 -->
+<section class="panel hidden" id="quizPanel"></section>
+
+<!-- 步驟三：結果 -->
+<section class="panel hidden" id="resultPanel"></section>
+
+<footer class="footer">
+  <a class="brand dat-brand" href="https://dat-fgss.github.io/Home/" style="display:inline-flex;">
+    <img class="crest" src="assets/logo-crest.png" alt="" width="40" height="40" />
+    <span class="brand-text">
+      <span class="school">粉嶺官立中學</span>
+      <span class="dat">設計與應用科技科 (DAT)</span>
+    </span>
+  </a>
+  <p>槓桿溫習網頁 · 即時評估</p>
+
+  <p><a class="back-dat" href="https://dat-fgss.github.io/Home/">返回DAT網頁</a></p>
+</footer>
+
+<script src="js/quiz.js"></script>
+</body>
+</html>
